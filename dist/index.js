@@ -51,6 +51,43 @@ let second = {
     status: ["married", 33],
 };
 first = second;
+let ming = {
+    name: "sherpa",
+    status: 24,
+    mileStone: ["achieved"],
+};
+// literals types helps to keep the  code dry
+let myName;
+// myName = "son"; can not do this
+let multipleNames;
+multipleNames = "ming";
+//  simple functions
+let add = (a, b) => {
+    return a + b;
+};
+let anything = (message) => {
+    console.log(message);
+};
+anything("hi");
+anything(add(2, 3));
+// optional parameters// must be last parameter
+const addAll = (a, b, c) => {
+    if (c !== undefined) {
+        return a + b + c;
+    }
+    return a + b;
+};
+// default parameters
+const sumAll = (a, b, c = 2) => {
+    return a + b + c;
+};
+anything(addAll(2, 8, 2));
+anything(sumAll(2, 22));
+// Rest parameter // always at the end
+const addRest = (a, ...nums) => {
+    return a + nums.reduce((sum, num) => sum + num);
+};
+anything(addRest(1, 1, 1, 4)); // 7
 const greet = (name) => `Hello, ${name}`;
 console.log(greet("Sherpa"));
 export {};
