@@ -105,5 +105,39 @@ const addRest = (a: number, ...nums: number[]) => {
   return a + nums.reduce((sum, num) => sum + num);
 };
 anything(addRest(1, 1, 1, 4)); // 7
+// Classes
+class Person {
+  constructor(
+    public readonly name: string,
+    public age: number,
+    private status: string,
+    protected lang: string = "typescript",
+  ) {}
+  public getAge() {
+    return `Hello ${this.name} you are ${this.age} years old.`;
+  }
+}
+const sam = new Person("sam", 44, "sigle");
+console.log(sam.getAge());
+// console.log(sam.status) can not access here
+// console.log(sam.lang)
+class NewPeron extends Person {
+  constructor(
+    name: string,
+    age: number,
+    status: string,
+    lang: string,
+    public interest: string,
+  ) {
+    super(name, age, status, lang);
+  }
+
+  public myInterest() {
+    return `i'm interested in ${this.interest}`;
+  }
+}
+const me = new NewPeron("pemba", 25, "single", "english", "computer");
+console.log(me.myInterest());
+
 const greet = (name: string): string => `Hello, ${name}`;
 console.log(greet("Sherpa"));
