@@ -138,6 +138,30 @@ class NewPeron extends Person {
 }
 const me = new NewPeron("pemba", 25, "single", "english", "computer");
 console.log(me.myInterest());
+// getter and setter
+class music {
+  private genre: string[];
+  constructor() {
+    this.genre = [];
+  }
+  public get data(): string[] {
+    return this.genre;
+  }
+
+  public set data(value: string[]) {
+    if (Array.isArray(value) && value.every((el) => typeof el === "string")) {
+      this.genre = value;
+      return;
+    } else throw new Error("the provided data is not a string");
+  }
+}
+
+const musicgenre = new music();
+musicgenre.data = ["rnb", "pop"];
+console.log(musicgenre.data);
+const moregenres = [...musicgenre.data, "moregenres"];
+console.log(moregenres);
+// musicgenre.data = "jo"; the provided data is not a string,, this is error here
 
 const greet = (name: string): string => `Hello, ${name}`;
 console.log(greet("Sherpa"));
