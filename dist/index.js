@@ -143,8 +143,24 @@ musicgenre.data = ["rnb", "pop"];
 console.log(musicgenre.data);
 const moregenres = [...musicgenre.data, "moregenres"];
 console.log(moregenres);
-// musicgenre.data = "jo"; the provided data is not a string,, this is error here
-const greet = (name) => `Hello, ${name}`;
-console.log(greet("Sherpa"));
+const updatedAssignment = (assign, propUpdated) => {
+    return { ...assign, ...propUpdated };
+};
+const assign1 = {
+    studenId: 1,
+    title: "math",
+    grade: 0,
+};
+console.log(updatedAssignment(assign1, { grade: 100 }));
+// Required
+const gradedAssignmet = (assign) => {
+    return assign;
+};
+const finalAssignmnet = {
+    ...assign1,
+    // verified: true,
+};
+console.log(gradedAssignmet({ ...assign1, verified: true }));
 export {};
+// finalAssignmnet.grade= 22 can not assign value cuz its readonly
 //# sourceMappingURL=index.js.map

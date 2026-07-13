@@ -163,5 +163,38 @@ const moregenres = [...musicgenre.data, "moregenres"];
 console.log(moregenres);
 // musicgenre.data = "jo"; the provided data is not a string,, this is error here
 
-const greet = (name: string): string => `Hello, ${name}`;
-console.log(greet("Sherpa"));
+//Utility
+//  partial
+interface Assignment {
+  studenId: number;
+  title: string;
+  grade: number;
+  verified?: boolean;
+}
+
+const updatedAssignment = (
+  assign: Assignment,
+  propUpdated: Partial<Assignment>,
+): Assignment => {
+  return { ...assign, ...propUpdated };
+};
+
+const assign1: Assignment = {
+  studenId: 1,
+  title: "math",
+  grade: 0,
+};
+console.log(updatedAssignment(assign1, { grade: 100 }));
+
+// Required
+const gradedAssignmet = (assign: Required<Assignment>): Assignment => {
+  return assign;
+};
+
+const finalAssignmnet: Readonly<Assignment> = {
+  ...assign1,
+  // verified: true,
+};
+
+console.log(gradedAssignmet({ ...assign1, verified: true }));
+// finalAssignmnet.grade= 22 can not assign value cuz its readonly
