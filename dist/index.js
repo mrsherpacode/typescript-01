@@ -185,5 +185,26 @@ const omitted = {
     title: "good",
     // grade:99; ommitted
 };
+// Return types
+const createAssign = (title, points) => {
+    return { title, points };
+};
+const finalAssing = createAssign("homework", 100);
+console.log(finalAssing);
+const newParams = ["math", 100];
+const finalParams = createAssign(...newParams);
+console.log(finalParams);
+const fetchUsers = async () => {
+    const data = await fetch("https://jsonplaceholder.typicode.com/users")
+        .then((res) => {
+        return res.json();
+    })
+        .catch((err) => {
+        if (err instanceof Error)
+            console.log(err.message);
+    });
+    return data;
+};
+fetchUsers().then((users) => console.log(users));
 export {};
 //# sourceMappingURL=index.js.map
