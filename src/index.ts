@@ -198,3 +198,40 @@ const finalAssignmnet: Readonly<Assignment> = {
 
 console.log(gradedAssignmet({ ...assign1, verified: true }));
 // finalAssignmnet.grade= 22 can not assign value cuz its readonly
+
+// Record types
+const hexColor: Record<string, string> = {
+  red: "fff000",
+  blue: "kkkk000",
+  green: "jjjj000",
+};
+
+type students = "hari" | "sam";
+type grades = "A" | "B" | "C";
+
+const finalGrades: Record<students, grades> = {
+  hari: "A",
+  sam: "C",
+};
+
+interface styles {
+  hipop: string;
+  oldschool: string;
+}
+const trends: Record<students, styles> = {
+  hari: { hipop: "highly trendy", oldschool: "classic" },
+  sam: { hipop: "not cool", oldschool: "modern" },
+};
+//  pick
+type pickAssignment = Pick<Assignment, "grade" | "title">;
+const newAssignment: pickAssignment = {
+  grade: 95,
+  title: "ktm",
+};
+// omit
+type omitAssignment = Omit<Assignment, "grade" | "verified">;
+const omitted: omitAssignment = {
+  studenId: 22,
+  title: "good",
+  // grade:99; ommitted
+};

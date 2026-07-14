@@ -161,6 +161,29 @@ const finalAssignmnet = {
     // verified: true,
 };
 console.log(gradedAssignmet({ ...assign1, verified: true }));
-export {};
 // finalAssignmnet.grade= 22 can not assign value cuz its readonly
+// Record types
+const hexColor = {
+    red: "fff000",
+    blue: "kkkk000",
+    green: "jjjj000",
+};
+const finalGrades = {
+    hari: "A",
+    sam: "C",
+};
+const trends = {
+    hari: { hipop: "highly trendy", oldschool: "classic" },
+    sam: { hipop: "not cool", oldschool: "modern" },
+};
+const newAssignment = {
+    grade: 95,
+    title: "ktm",
+};
+const omitted = {
+    studenId: 22,
+    title: "good",
+    // grade:99; ommitted
+};
+export {};
 //# sourceMappingURL=index.js.map
